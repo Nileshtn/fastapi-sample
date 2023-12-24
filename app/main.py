@@ -1,7 +1,7 @@
 from typing import Union
 from pydantic import BaseModel
 from fastapi import FastAPI
-from utils.math import add
+from app.utils.math import add
 
 app = FastAPI()
 
@@ -15,6 +15,7 @@ class item(BaseModel):
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
+
 
 @app.get("/add")
 def get_add():
